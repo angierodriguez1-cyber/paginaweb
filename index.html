@@ -1285,9 +1285,6 @@
   <script>
 
     const URL_API = "https://script.google.com/macros/s/AKfycbzWR1F1rIFiAcOHPla50rDtkbSlV8nNNkXd4wne7_LiniAlYWz54e0HcNrw8aWQ0h2t/exec";
-    localStorage.removeItem("productos");
-localStorage.removeItem("informacion");
-console.log("Datos antiguos eliminados al inicio → cargando información fresca");
     function precargarInformacion() {
       $.ajax({
         url: URL_API,
