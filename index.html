@@ -1357,8 +1357,13 @@
         }
       }
     }
-    precargarInformacion();
-    precargarProductos();
+localStorage.removeItem("productos");
+localStorage.removeItem("informacion");
+
+
+console.log("Datos antiguos eliminados al inicio → cargando información fresca");
+precargarInformacion();
+precargarProductos();
     const informacion = JSON.parse(localStorage.getItem("informacion")) || {};
     const WHATSAPP_NUMERO = informacion.Whatsapp || "";
     console.log("Número de WhatsApp cargado:", WHATSAPP_NUMERO);
