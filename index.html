@@ -1357,11 +1357,6 @@
         }
       }
     }
-localStorage.removeItem("productos");
-localStorage.removeItem("informacion");
-
-
-console.log("Datos antiguos eliminados al inicio → cargando información fresca");
 precargarInformacion();
 precargarProductos();
     const informacion = JSON.parse(localStorage.getItem("informacion")) || {};
