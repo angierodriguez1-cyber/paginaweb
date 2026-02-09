@@ -1951,7 +1951,17 @@
 
       pintar(filtrados);
     }
-
+// Forzamos actualización completa al cargar la página
+window.addEventListener('load', () => {
+    // Limpiamos los datos que queremos que siempre se actualicen
+    localStorage.removeItem("productos");
+    localStorage.removeItem("informacion");
+    
+    // Opcional: también puedes limpiar el carrito si deseas que se reinicie al refrescar
+    // localStorage.removeItem("carrito");
+    
+    console.log("Datos antiguos eliminados → forzando actualización desde API");
+});
   </script>
 
 </body>
