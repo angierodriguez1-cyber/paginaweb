@@ -1322,14 +1322,13 @@
           loader.style.opacity = "0";
           setTimeout(() => {
             loader.style.display = "none";
-          }, 400); // coincide con la duración de la transición CSS
+          }, 400);
         }
 
       } catch (error) {
         console.error("Error al cargar productos:", error);
 
-        // Mostramos mensaje de error (opcional: podrías dejar el loader y poner botón de reintentar)
-        if (loader) {
+    if (loader) {
           loader.innerHTML = `
         <div style="font-size: 60px; color: #e74c3c; margin-bottom: 20px;">
           <i class="fa fa-exclamation-triangle"></i>
@@ -1789,6 +1788,9 @@ precargarProductos();
       }
 
       localStorage.setItem("carrito", JSON.stringify(carrito));
+        cantidades[key] = 0;
+  document.getElementById(`qty-${key}`).innerText = "0";
+
 
       Swal.fire({
         html: `<span style="color:#000000;font-weight:500">
