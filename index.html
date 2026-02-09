@@ -1285,6 +1285,9 @@
   <script>
 
     const URL_API = "https://script.google.com/macros/s/AKfycbzWR1F1rIFiAcOHPla50rDtkbSlV8nNNkXd4wne7_LiniAlYWz54e0HcNrw8aWQ0h2t/exec";
+    localStorage.removeItem("productos");
+localStorage.removeItem("informacion");
+console.log("Datos antiguos eliminados al inicio → cargando información fresca");
     function precargarInformacion() {
       $.ajax({
         url: URL_API,
@@ -1951,17 +1954,7 @@
 
       pintar(filtrados);
     }
-// Forzamos actualización completa al cargar la página
-window.addEventListener('load', () => {
-    // Limpiamos los datos que queremos que siempre se actualicen
-    localStorage.removeItem("productos");
-    localStorage.removeItem("informacion");
-    
-    // Opcional: también puedes limpiar el carrito si deseas que se reinicie al refrescar
-    // localStorage.removeItem("carrito");
-    
-    console.log("Datos antiguos eliminados → forzando actualización desde API");
-});
+
   </script>
 
 </body>
